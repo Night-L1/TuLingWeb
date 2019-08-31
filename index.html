@@ -1,0 +1,2416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图灵AI开放平台-首页</title>
+    <link rel="icon" href="imgs/favicon1.ico">
+    <link rel="stylesheet" href="http://biz.turingos.cn/static/css/app.baab303fc423b87cf4b78bccfb3d48f5.css">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://use.fontawesome.com/9d3de565a8.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=3.0&ak=EAGDcknnwbKe54tTxS6cZTXGeHaC24nF"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="HandheldFriendly" content="true">
+
+    <style>
+
+        ::-webkit-scrollbar{
+            width: 0px;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .content{
+            width: 1200px;
+            height: 66px;
+            margin: 0 auto;
+        }
+        .logo{
+            display: flex;
+
+        }
+        .fl{
+            float: right;
+            margin-top: -50px;
+        }
+        .btn{
+            width: 55px;
+            height: 30px;
+            border-radius: 6px;
+            background-color: rgb(45,140,240);
+            color: white;
+        }
+        .reg-btn{
+            background-color: white;
+            color: black;
+            margin-left: 30px;
+        }
+
+        .navbar-bd{
+
+            height: 40px;
+            width: 100%;
+            margin-top: 2px;
+        }
+        ul li{
+            height: 40px;
+            width: 100px;
+            margin-left: 8px;
+            /*background-color: red;*/
+        }
+        .w_menu{
+            width: 1190px;
+            margin: 0 auto;
+        }
+        .menu{
+            float: left;
+            line-height: 40px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-left: 20px;
+        }
+
+        .show_{
+            position: absolute;
+            top: 111px;
+            left: 157px;
+            width: 120px;
+            height: 150px;
+            background-color: white;
+            color: rgb(187,187,192);
+            border-radius: 8px;
+            box-shadow:  0 1px 6px rgba(0,0,0,.2);
+            z-index: 900;
+            display: none;
+        }
+        .show_index{
+            left: 190px;
+        }
+        .show_fa{
+            left: 315px;
+        }
+        .show_js{
+            left: 440px;
+        }
+        .show_index li,.show_fa li,.show_js li{
+            width: 100px;
+            height: 30px;
+            border-radius: 10px;
+            line-height: 30px;
+            margin-top: 5px;
+            text-align: center;
+            font-size: 14px;
+            transition: background-color .3s ease-in;
+        }
+        .show_index li:hover,.show_fa li:hover,.show_js li:hover{
+            background-color: gray;
+            color: white;
+        }
+        /*  第二部分  */
+        .text{
+            position: absolute;
+            left: 177px;
+            top: 241px;
+            width: 420px;
+            height: 120px;
+            /*border: 1px solid red;*/
+        }
+
+        .p0{
+            color: white;
+            font-size: 25px;
+        }
+        .p1{
+            color: white;
+            font-size: 52px;
+        }
+        .btn_a{
+            position: absolute;
+            left: 177px;
+            top: 430px;
+            width: 200px;
+            height: 80px;
+            /*border: 1px solid red;*/
+        }
+        .p_{
+            border: 1px solid white;
+            width: 180px;
+            height: 50px;
+            font-size: 25px;
+            color: white;
+            line-height: 50px;
+            text-align: center;
+            border-radius: 5px;
+            transition: color .3s ease-in-out;
+        }
+        .p_:hover{
+            border: 1px solid rgb(0,138,220);
+            color: rgb(0,138,220);
+            cursor: pointer;
+        }
+        .cav{
+            position: absolute;
+            left: 850px;
+            top:160px;
+            width: 400px;
+            height: 400px;
+            /*border: 1px solid red;*/
+        }
+        .hig,.base,.mid{
+            position: absolute;
+            line-height: 80px;
+            text-align: center;
+            color: white;
+            font-size: 20px;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+        }
+        .hig{
+
+            left: 150px;
+            top: -16px;
+            background: linear-gradient(rgb(255,146,45), rgb(255,225,36));
+            animation: a 5s linear infinite;
+            transform-origin:50% 270%;
+        }
+        .base{
+            left: 3px;
+            top: 240px;
+            background: linear-gradient(rgb(37,148,255), rgb(110,206,236));
+            animation: b 5s linear infinite;
+            transform-origin:260% -40%;
+        }
+        .mid{
+            left: 323px;
+            top: 240px;
+            background: linear-gradient(rgb(3,212,151), rgb(122,252,23));
+            animation: c 5s linear infinite;
+            transform-origin:-160% -45%;
+        }
+        .center{
+            position: absolute;
+            width: 185px;
+            height: 185px;
+            left: 107px;
+            top: 110px;
+            background: linear-gradient(rgb(65,205,78), rgb(0,138,220));
+            border-radius: 50%;
+            line-height: 185px;
+            text-align: center;
+            transform: rotate(45deg);
+            animation: rol 5s linear infinite;
+
+        }
+        @keyframes zz {
+            to{
+                transform: rotate(0);
+            }
+            from{
+                transform: rotate(360deg);
+            }
+        }
+        @keyframes a {
+            from{
+                transform: rotate(0);
+            }
+            to{
+                transform: rotate(360deg);
+            }
+        }
+        @keyframes b {
+            from{
+                transform: rotate(0);
+            }
+            to{
+                transform: rotate(360deg);
+            }
+           }
+        @keyframes c {
+            from{
+                transform: rotate(0);
+            }
+            to{
+                transform: rotate(360deg);
+            }
+              }
+        @keyframes rol {
+            to{
+                transform: rotate(0);
+            }
+            from{
+                transform: rotate(360deg);
+            }
+        }
+        .p3{
+            color: white;
+            font-size: 25px;
+        }
+        .thr{
+            width: 100%;
+        }
+        .w-title{
+            width: 1200px;
+            height: 140px;
+            /*background-color: red;*/
+            margin: 0 auto;
+            text-align: center;
+        }
+        .title-top{
+            font-size: 45px;
+            color: rgb(76,183,237);
+        }
+        .title{
+            font-size: 32px;
+        }
+        .title-content{
+            font-size: 14px;
+        }
+        .th-intr-turingos{
+            width: 1200px;
+            height: 195px;
+            margin: 30px auto;
+            /*border: 1px solid red;*/
+        }
+        .intr-turingos-menu{
+            display: flex;
+            justify-content: space-between;
+        }
+        .item1,.item2,.item3,.item4{
+            margin-top: 30px;
+            margin-left: 10px;
+            width: 230px;
+            height: 150px;
+            /*border: 1px solid red;*/
+            flex: 1;
+            text-align: center;
+            line-height: 150px;
+        }
+        .under_line{
+            position: absolute;
+            width: 100px;
+            height: 40px;
+            top: 831px;
+            left: 227px;
+        }
+        .under_line::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 140px;
+            width: 100px;
+            height: 2px;
+            background: rgb(0,163,240);
+            transition: transform .5s;
+            transform: scaleX(0);
+        }
+        .under_line:hover::before {
+            transform: scaleX(1);
+        }
+        .under_line1{
+            position: absolute;
+            width: 100px;
+            height: 40px;
+            top: 831px;
+            left: 463px;
+        }
+        .under_line1::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 140px;
+            width: 100px;
+            height: 2px;
+            background: rgb(0,163,240);
+            transition: transform .5s;
+            transform: scaleX(0);
+        }
+        .under_line1:hover::before {
+            transform: scaleX(1);
+        }
+        .under_line2{
+            position: absolute;
+            width: 100px;
+            height: 40px;
+            top: 831px;
+            left: 704px;
+        }
+        .under_line2::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 140px;
+            width: 100px;
+            height: 2px;
+            background: rgb(0,163,240);
+            transition: transform .5s;
+            transform: scaleX(0);
+        }
+        .under_line2:hover::before {
+            transform: scaleX(1);
+        }
+        .under_line3{
+            position: absolute;
+            width: 100px;
+            height: 40px;
+            top: 831px;
+            left: 925px;
+        }
+        .under_line3::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 140px;
+            width: 100px;
+            height: 2px;
+            background: rgb(0,163,240);
+            transition: transform .5s;
+            transform: scaleX(0);
+        }
+        .under_line3:hover::before {
+            transform: scaleX(1);
+        }
+
+
+
+
+        h2{
+            font-size: 25px;
+            color: #262626;
+        }
+        p{
+            font-size:  16px;
+            color: gray;
+            display: block;
+        }
+        .four{
+            overflow: hidden;
+            width: 100%;
+            height: 511px;
+        }
+        .four_content_1{
+            /*display: none;*/
+
+        }
+        .four_content_2{
+            display: none;
+
+        }
+        .four_content_3{
+            display: none;
+
+        }
+        .four_content_4{
+            display: none;
+
+        }
+        .four_btn_a{
+            position: absolute;
+            left: 600px;
+            top: 1800px;
+            width: 120px;
+            height: 40px;
+            /*background-color: red;*/
+        }
+        .p_f{
+            width: 110px;
+            height: 30px;
+            border: 1px solid white;
+            text-align: center;
+            line-height: 30px;
+            color: white;
+            border-radius: 8px;
+        }
+        .p_f:hover{
+            border: 1px solid rgb(0,163,240);
+            color: rgb(0,163,240);
+            transition: border .3s ease-in;
+            cursor: pointer;
+        }
+        .four_menu{
+            position: absolute;
+            top: 1970px;
+            left: 480px;
+            width: 400px;
+            height: 90px;
+            /*background-color: #262626;*/
+
+        }
+        .four_menu_item1,.four_menu_item2,.four_menu_item3,.four_menu_item4{
+            float: left;
+            width: 75px;
+            height: 75px;
+            background-color: white;
+            margin-left: 20px;
+            margin-top: 8px;
+            border-radius: 50%;
+            line-height: 75px;
+            text-align: center;
+            box-shadow: 1px 3px 6px rgba(0,0,0,.2);
+        }
+        .five{
+            width: 100%;
+        }
+
+        .w_five{
+            width: 1200px;
+            height: 680px;
+            margin: 0 auto;
+            /*border: 1px solid black;*/
+        }
+        .five_title{
+            width: 1200px;
+            height: 145px;
+            margin-top: 50px;
+            text-align: center;
+            line-height: 145px;
+            /*background-color: #262626;*/
+        }
+        .five_title_p{
+            font-size: 32px;
+            color: black;
+        }
+        .five_content_p{
+            margin-top: -80px;
+            font-size: 14px;
+        }
+        .five_content{
+            margin-top: 50px;
+            width: 1200px;
+            height: 420px;
+            /*border:1px solid red;*/
+            display: flex;
+            flex-direction: column;
+        }
+        .five_item1{
+            /*background-color: cornflowerblue;*/
+            width: 100%;
+            height: 190px;
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .five_item1_box{
+            width: 413px;
+            height: 171px;
+            flex: 1;
+            cursor: pointer;
+            margin: 10px;
+            display: flex;
+            transition: 0.5s ease-in-out;
+        }
+        .five_item1_box:hover{
+            box-shadow:  0 1px 6px rgba(0,0,0,.2);
+        }
+        .six{
+            width: 100%;
+            height: 560px;
+            background-color: #F5F5F5;
+            /*margin-top: 10px;*/
+            /*border: 1px solid red;*/
+            display: flex;
+        }
+        .six_lf{
+            /*border: 1px solid red;*/
+            flex: 2;
+            display: flex;
+            overflow: hidden;
+            position: relative;
+            margin-top: 40px;
+        }
+        .six_rig{
+            /*border: 1px solid black;*/
+            flex: 1;
+        }
+        .six_le_1{
+            flex: 1;
+            width: 300px;
+            height: 200px;
+            /*background-color: red;*/
+            transform: rotate(-30deg);
+            margin-top: 100px;
+            margin-left: 40px;
+        }
+        .six_le_2{
+            flex: 1;
+            width: 300px;
+            height: 200px;
+            /*background-color: red;*/
+            transform: rotate(30deg);
+            margin-top: 100px;
+        }
+        .six_le_center{
+            position: absolute;
+            width: 300px;
+            height: 200px;
+            /*background-color: blue;*/
+            top: 310px;
+            left: 400px;
+
+        }
+        .six_text{
+            width: 100px;
+            height: 40px;
+            top: 60px;
+            left: 90px;
+            /*background-color: red;*/
+            position: absolute;
+            font-size: 16px;
+            text-align: center;
+            color: dodgerblue;
+        }
+        .six_le_bg{
+            position: absolute;
+            width: 600px;
+            height: 300px;
+            /*background-color: gray;*/
+            top: 280px;
+            left: 150px;
+        }
+        .six_le_1_1{
+            position: absolute;
+            width: 75px;
+            height: 75px;
+            top: 10px;
+            left: 10px;
+            /*background-color: blue;*/
+            transform: rotate(30deg);
+        }
+        .six_le_1_2{
+            position: absolute;
+            width: 75px;
+            height: 75px;
+            top: -20px;
+            left: 130px;
+            /*background-color: blue;*/
+            transform: rotate(30deg);
+            margin-left: 50px;
+        }
+        .six_le_1_3{
+            position: absolute;
+            width: 75px;
+            height: 75px;
+            top: 10px;
+            left: 300px;
+            /*background-color: blue;*/
+            transform: rotate(30deg);
+            margin-left: 100px;
+        }
+        .six_le_1_4{
+            position: absolute;
+            width: 75px;
+            height: 75px;
+            top: 140px;
+            left: 300px;
+            /*background-color: blue;*/
+            transform: rotate(30deg);
+        }
+        .six_le_1_5{
+            position: absolute;
+            width: 75px;
+            height: 75px;
+            top: 140px;
+            left: 150px;
+            /*background-color: blue;*/
+            transform: rotate(30deg);
+        }
+        .six_le_1_6{
+            position: absolute;
+            width: 75px;
+            height: 75px;
+            top: 100px;
+            left: -10px;
+            /*background-color: blue;*/
+            transform: rotate(30deg);
+        }
+        .six_le_2_1,.six_le_2_2,.six_le_2_3,.six_le_2_4,.six_le_2_5{
+
+            transform: rotate(-30deg);
+        }
+        .zz{
+            left: 200px;
+        }
+        .six_btn{
+            width: 120px;
+            height: 30px;
+            border: 1px solid rgb(0,163,230);
+            text-align: center;
+            line-height: 30px;
+            color: rgb(0,163,230);
+            border-radius: 6px;
+        }
+        .six_btn:hover{
+            background-color: rgb(0,163,240);
+            color: white;
+            transition: background-color 0.3s ease-in-out;
+            cursor: pointer;
+        }
+        .six_rig{
+            margin-top: 40px;
+        }
+        .toBlue_{
+            color: dodgerblue;
+        }
+        .seven{
+            width: 100%;
+        }
+        .seven_title{
+            width: 1100px;
+            height: 140px;
+            /*border: 1px solid red;*/
+            margin: 0 auto;
+            text-align: center;
+            line-height: 70px;
+        }
+        .seven_title_p{
+            font-size: 32px;
+            color: #262626;
+            margin-top: 20px;
+        }
+        .seven_title_p_content{
+            font-size: 14px;
+            color: #262626;
+        }
+        .seven_show{
+            width: 1100px;
+            height: 720px;
+            margin: 0 auto;
+            /*border: 1px solid black;*/
+        }
+        .seven_show_menu1{
+            width: 1100px;
+            height: 320px;
+            /*border: 1px solid blue;*/
+            margin-top: 40px;
+        }
+        .seven_show_menu2{
+            width: 1100px;
+            height: 320px;
+
+            margin-top: 20px;
+        }
+        .seven_show_item1{
+            width: 360px;
+            height: 300px;
+            border: 1px solid rgb(225,225,230);
+            float: left;
+            margin-left: 5px;
+            box-shadow: 0 2px 2px hsla(0,0%,66%,.5);
+        }
+        .seven_item{
+            width: 300px;
+            height: 110px;
+            /*border: 1px solid blue;*/
+            margin: 20px auto;
+            display: flex;
+        }
+        .seven_hover img{
+            transition-duration: 0.5s;
+        }
+        .seven_hover img:hover{
+            transform: scale(1.2);
+        }
+
+        .eight{
+            width: 100%;
+            height: 515px;
+            background: linear-gradient(rgb(248,248,248),#F8F8F8);
+        }
+        .eight_title{
+            width: 930px;
+            height: 110px;
+            margin: 0 auto;
+            text-align: center;
+            line-height: 70px;
+        }
+        .eight_show{
+            width: 1200px;
+            height: 240px;
+            /*border: 1px solid red;*/
+            margin: 30px auto;
+        }
+        .eight_show_item{
+            float: left;
+            width: 280px;
+            height: 170px;
+            margin-top: 30px;
+            margin-left: 100px;
+            /*background-color: red;*/
+        }
+        .eight_btn{
+            width: 370px;
+            height: 50px;
+            border: 1px solid dodgerblue;
+            color: dodgerblue;
+            text-align: center;
+            line-height: 50px;
+            margin: 0 auto;
+            border-radius: 8px;
+            transition: 0.3s ease-in-out;
+        }
+        .eight_btn:hover{
+            background-color: dodgerblue;
+            color: white;
+            cursor: pointer;
+        }
+        .nine{
+
+            height: 570px;
+            background-color: rgb(234,234,234);
+        }
+        .nine_center{
+            width: 890px;
+            height: 490px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: row;
+
+        }
+        .nine_center_left{
+            width: 420px;
+            height: 450px;
+            flex: 1;
+            /*background-color: red;*/
+            position: relative;
+        }
+        .nine_center_left_title{
+            width: 320px;
+            height: 200px;
+            /*margin: 0 auto;*/
+            text-align: center;
+            line-height: 100px;
+            /*border: 1px solid red;*/
+        }
+        .nine_center_form{
+            width: 320px;
+            height: 330px;
+            /*border: 1px solid red;*/
+            /*margin: 0 auto;*/
+        }
+        .inp{
+            display: inline-block;
+            width: 100%;
+            height: 32px;
+            line-height: 1.5;
+            padding: 4px 7px;
+            font-size: 12px;
+            border: 1px solid #dcdee2;
+            border-radius: 4px;
+            color: #515a6e;
+            background-color: #fff;
+            background-image: none;
+            position: relative;
+            cursor: text;
+            transition: border .2s ease-in-out,background .2s ease-in-out,box-shadow .2s ease-in-out;
+        }
+        .inp:hover{
+            border: 1px solid rgb(45,140,240);
+        }
+        .nine_btn{
+            background-color: rgb(45,140,240);
+            color: white;
+        }
+        .nine_btn:hover{
+            cursor: pointer;
+            background-color: #57A3F3;
+        }
+        .nine_center_right{
+            width: 520px;
+            height: 550px;
+            flex: 1;
+            /*border: 1px solid rgb(45,140,240);*/
+        }
+        .ku{
+            margin-top: 15px;
+            width: 444px;
+            height: 250px;
+            /*border: 1px solid rgb(45,140,240);*/
+        }
+        .nine_tit{
+            font-size: 26px;
+            text-align: center;
+        }
+        .nine_con{
+            font-size: 14px;
+        }
+        .tel2{
+            font-size: 16px;
+        }
+        .map{
+            width: 440px;
+            height: 300px;
+            /*border: 1px solid rgb(45,140,240);*/
+        }
+        .footer{
+            height: auto;
+            background-color: rgb(64,64,64);
+        }
+        .footer_logo{
+            width: 250px;
+            height: 80px;
+            /*background-color: white;*/
+            margin: 0 auto;
+        }
+        .footer_logo_left{
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: white;
+            /*background-color: red;*/
+            margin-left: 10px;
+            margin-top: 20px;
+            float: left;
+            text-align: center;
+            line-height: 55px;
+            z-index: 999;
+        }
+        .footer_list{
+            width: 750px;
+            height: 40px;
+            margin: 0 auto;
+        }
+        .footer_list li{
+            width: auto;
+            float: left;
+            color: white;
+            font-size: 15px;
+            margin-left: 20px;
+        }
+        .footer_bot{
+            margin: 0 auto;
+            width: 700px;
+            height: 30px;
+        }
+        .logo_btn{
+            position: absolute;
+            left: 1100px;
+            top: 60px;
+            display: none;
+            width: 190px;
+            height: 200px;
+            background-color: rgb(255,255,255);
+            border-radius: 10px;
+            text-align: center;
+        }
+        .logo_inp{
+            display: inline-block;
+            width: 80%;
+            height: 32px;
+            line-height: 1.5;
+            padding: 4px 7px;
+            font-size: 12px;
+            border: 1px solid #dcdee2;
+            border-radius: 4px;
+            color: #515a6e;
+            background-color: #fff;
+            transition: border .2s ease-in-out,background .2s ease-in-out,box-shadow .2s ease-in-out;
+        }
+        .logo_inp:hover{
+
+            border: 1px solid rgb(45,140,240);
+        }
+        .butto{
+            background-color: dodgerblue;
+            color: white;
+        }
+        .trf_{
+            transform: scale(1.2);
+        }
+        .toTop{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: rgb(76,183,267);
+            position: fixed;
+            top: 500px;
+            left: 1230px;
+            text-align: center;
+            line-height: 50px;
+            display: none;
+            box-shadow: 0 2px 2px hsla(0,0%,66%,.5);
+        }
+        .toTop:hover{
+            background-color: blue;
+
+        }
+        .four_p1{
+
+            font-size: 26px;
+            color: white;
+            transition: color  0.3s ease-in-out;
+
+        }
+        .four_p2{
+            font-size: 18px;
+            color: white;
+            transition: color  0.3s ease-in-out;
+        }
+        .four_title{
+
+            position: absolute;
+            top: 1613px;
+            left: 322px;
+            text-align: center;
+        }
+        .fa_img_{
+
+            transition:transform 1s ease-in;
+            animation: fu 1.8s ease-in;
+        }
+        @keyframes fu {
+            from{
+                transform: scale(1.2);
+                transition:transform .8s ease-in;
+            }
+            to{
+                transform: scale(1);
+                transition:transform 1s ease-in;
+            }
+
+        }
+        .th_show_content_list1{
+            width: 1200px;
+            height: 460px;
+            /*border: 1px solid red;*/
+            margin:0 auto;
+
+        }
+        .th_show_content_list2{
+            width: 1200px;
+            height: 460px;
+            /*border: 1px solid red;*/
+            margin:0 auto;
+            /*z-index: 999;*/
+            display:none;
+        }
+        .th_show_content_list3{
+            width: 1200px;
+            height: 460px;
+            /*border: 1px solid red;*/
+            margin:0 auto;
+            /*z-index: 999;*/
+            display:none;
+        }
+        .th_show_content_list4{
+            width: 1200px;
+            height: 460px;
+            /*border: 1px solid red;*/
+            margin:0 auto;
+            /*z-index: 999;*/
+            display:none;
+        }
+        .th_show_content_1{
+            width: 600px;
+            height: 340px;
+            float: left;
+        }
+        .th_show_content_2{
+            width: 550px;
+            height: 320px;
+            margin-left: 50px;
+            float: left;
+        }
+        .fixNav{
+            width: 100%;
+            height: 40px;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            background-color: white;
+            border-bottom: 1px solid #515a6e;
+            display: none;
+            z-index: 999;
+        }
+        .show_index_2{
+            position: fixed;
+            top: 40px;
+            left: 280px;
+        }
+        .show_fa_2{
+            position: fixed;
+            top: 40px;
+            left: 400px;
+        }
+        .show_js_2{
+            position: fixed;
+            top: 40px;
+            left: 520px;
+        }
+        .show_index_2 li,.show_fa_2 li,.show_js_2 li{
+            width: 100px;
+            height: 30px;
+            border-radius: 10px;
+            line-height: 30px;
+            margin-top: 5px;
+            text-align: center;
+            font-size: 14px;
+            transition: background-color .3s ease-in;
+        }
+        .show_index_2 li:hover,.show_fa_2 li:hover,.show_js_2 li:hover{
+            background-color: gray;
+            color: white;
+        }
+        .logo_btn_2{
+            position: fixed;
+            left: 1100px;
+            top: 50px;
+            display: none;
+            width: 190px;
+            height: 200px;
+            background-color: rgb(255,255,255);
+            border-radius: 10px;
+            text-align: center;
+        }
+        .confirm{
+
+            display: none;
+
+        }
+        .confirm_{
+            /*text-align: center;*/
+            width: 900px;
+            height: 520px;
+            /*border: 1px solid red;*/
+            position: absolute;
+            /*left: 0px;*/
+            top: 45px;
+            opacity: 0.9;
+            background-color: white;
+            z-index: 999;
+            box-shadow: 0 2px 2px hsla(0,0%,66%,.5);
+            border-radius: 20px;
+            animation: tan 3s ease-in-out;
+        }
+        @keyframes tan {
+            from{
+                left: -1500px;
+            }
+            to{
+                left: 0px;
+            }
+        }
+        .confirm_rig{
+            /*text-align: center;*/
+            width: 900px;
+            height: 520px;
+            /*border: 1px solid red;*/
+            position: absolute;
+            /*left: 0px;*/
+            top: 45px;
+            opacity: 0.9;
+            background-color: white;
+            z-index: 999;
+            box-shadow: 0 2px 2px hsla(0,0%,66%,.5);
+            border-radius: 20px;
+            animation: tan_ri 3s ease-in-out;
+        }
+        @keyframes tan_ri {
+            from{
+                left: 0px;
+            }
+            to{
+                left: -1500px;
+            }
+        }
+    </style>
+</head>
+<body style="overflow:-moz-scrollbars-horizontal;overflow-x:hidden">
+    <a id="top" href=""></a>
+    <div id="headerBar">
+        <div class="navbar-hd">
+           <div class="content">
+                <div class="logo">
+                    <div style="margin-top: 8px;">
+                        <a href="#">
+                            <img src="imgs/logo/logo.png" alt="">
+                        </a>
+                    </div>
+                    <div style="margin-top: 18px;">
+                        <img src="imgs/logo/AI.png" alt="">
+                    </div>
+                </div>
+               <div class="fl">
+                   <a href="#" class="log">
+                       <button id="header_logo_btn" type="button" class="ivu-btn ivu-btn-primary btn">
+                           <span id="head_logo_span">登录</span>
+                       </button>
+                   </a>
+                   <a href="#" class="log">
+                       <button  id="header_re_btn" type="button" class="ivu-btn ivu-btn-default btn reg-btn">
+                           <span id="head_re_span">注册</span>
+                       </button>
+                   </a>
+               </div>
+               <div id="show_user" style="display: none; float: right;margin-top: -50px;">
+
+               </div>
+               <div id="tuichu1" style="float: right;margin-top: -55px;display: none;margin-right: 140px;">
+                   <button type="button" class="ivu-btn ivu-btn-default btn reg-btn">退出</button>
+               </div>
+           </div>
+        </div>
+        <div style="border-bottom: 1px solid rgba(187,187,192,0.6);"></div>
+        <div class="navbar-bd">
+                <div class="w_menu">
+                    <ul class="nav_menu">
+                        <li class="menu">首页概况</li>
+                        <li id="menu_pro" class="menu">产品介绍
+                            <div id="show_pro" class="show_ show_index">
+                                <ul>
+                                    <li>Turing OS Lite</li>
+                                    <li>Turing OS Pro</li>
+                                    <li>Turing OS Pad</li>
+                                    <li>Turing OS 主板</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li id="menu_fa" class="menu">解决方案
+                            <div id="show_fa" class="show_  show_fa">
+                                <ul>
+                                    <li>智能故事机</li>
+                                    <li>儿童机器人</li>
+                                    <li>场景机器人</li>
+                                    <li>虚拟机器人</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li id="menu_js" class="menu">技术中心
+                            <div id="show_js" class="show_  show_js">
+                                <ul>
+                                    <li>语义理解</li>
+                                    <li>情感分析</li>
+                                    <li>知识图谱</li>
+                                    <li>多模态交互</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="menu">对话体验</li>
+                        <li class="menu">文档支持</li>
+                    </ul>
+                </div>
+        </div>
+    </div>
+    <div class="sec">
+        <img src="imgs/2-1.png" alt="" width="1420">
+        <div class="text">
+            <p class="p0">三个版本选择</p>
+            <div style="height: 10px;"></div>
+            <p class="p1">专业软硬一体方案</p>
+        </div>
+        <div class="btn_a">
+            <p class="p_">了解详情</p>
+        </div>
+        <div class="cav">
+            <canvas id="cvs" width="400" height="400"></canvas>
+            <div class="hig">高配版</div>
+            <div class="base">基础班</div>
+            <div class="mid">标准版</div>
+            <div class="center">
+                <a href="javascript();" class="p3" >Turing OS主板</a>
+            </div>
+        </div>
+    </div>
+    <div class="thr">
+        <div class="w-title">
+            <p class="title-top">Turing OS</p>
+            <p class="title">人工智能级机器人操作系统</p>
+            <p class="title-content">Turing OS的诞生，使得『让智能机器人走进每个家庭』的愿景正在变为现实</p>
+        </div>
+        <div class="th-intr-turingos">
+           <div class="intr-turingos-menu">
+               <div class="item1">
+                   <div class="under_line">
+                       <img class="show_gif" src="imgs/2-2/11.png" alt="" width="75" height="75">
+
+                   </div>
+                   <div style="margin-left: 75px;">　
+                       智能对话
+                   </div>
+               </div>
+               <div class="item2">
+                   <div class="under_line1">
+                       <img class="show_gif" src="imgs/2-2/2.png" alt="">
+                   </div>
+                   <div style="margin-left: -50px;">　
+                       多模态
+                   </div>
+               </div>
+               <div class="item3">
+                   <div class="under_line2">
+                       <img class="show_gif" src="imgs/2-2/3.png" alt="">
+                   </div>
+                   <div style="margin-left: -180px;">　
+                       多引擎
+                   </div>
+               </div>
+               <div class="item4">
+                   <div class="under_line3">
+                       <img class="show_gif" src="imgs/2-2/4.png" alt="">
+                   </div>
+                   <div style="margin-left: -330px;">　
+                       软硬适配
+                   </div>
+               </div>
+
+           </div>
+            <hr>
+        </div>
+        <div class="th_show_content_list1">
+            <div class="th_show_content_1">
+                <img src="imgs/2-2/pic1.e132920.png" alt="">
+            </div>
+            <div class="th_show_content_2">
+                <h2>整合智能对话服务，提升平均交互时长</h2>
+                <br><br>
+                <p>Turing Robot核心对话服务，5年技术沉淀，600+知识产权</p>
+                <br>
+                <p>开放域聊天准确率达81.64%，垂域技能准确率高达96.34%</p>
+                <br>
+                <p>平均交互时长大幅提升，为机器人情感陪伴提供强力支撑</p>
+            </div>
+        </div>
+        <div class="th_show_content_list2">
+            <div style="margin: 40px 200px;text-align: center ">
+                <p>多模态人机交互，打造个性化情感机器人</p>
+
+                <p>综合处理文字、语音、视觉、情感、动作等多维度感知觉信息</p>
+
+                <p>快速精准解析用户意图，及时给予多感官表现，结合硬件终端作出更多拟人化响应</p>
+            </div>
+            <div class="th_show_content_1" style="margin: 40px 200px;">
+                <img src="imgs/2-2/pic8.f9b7cf8.png" alt="">
+            </div>
+<!--            <div class="th_show_content_2">-->
+<!--                <h2>整合智能对话服务，提升平均交互时长</h2>-->
+<!--                <br><br>-->
+<!--                <p>Turing Robot核心对话服务，5年技术沉淀，600+知识产权</p>-->
+<!--                <br>-->
+<!--                <p>开放域聊天准确率达81.64%，垂域技能准确率高达96.34%</p>-->
+<!--                <br>-->
+<!--                <p>平均交互时长大幅提升，为机器人情感陪伴提供强力支撑</p>-->
+<!--            </div>-->
+        </div>
+        <div class="th_show_content_list3">
+            <div style="margin: 40px 200px;text-align: center ">
+                <p style="font-size: 25px;color: #262626;">三大引擎加速，共同缔造智能进化的开端</p>
+            </div>
+            <div style="width:1000px;height: auto;margin: 0 auto; ">
+                <div style="width: 320px;height: 140px;float: left;margin-top: 50px;">
+                    <p style="font-size: 20px;color: dodgerblue;">
+                        <i class="fa fa-heartbeat" aria-hidden="true"></i>&nbsp;情感计算引擎</p><br>
+                    <p style="font-size: 16px;">
+                        <i class="fa fa-paper-plane-o" aria-hidden="true"></i>&nbsp;&nbsp;拥有23种情感识别与情感表达</p><br>
+                    <p style="font-size: 16px;">
+                        <i class="fa fa-paper-plane-o" aria-hidden="true"></i>&nbsp;&nbsp;洞察用户感受</p>
+                </div>
+                <div style="width: 320px;height: 140px;float: left;margin-top: 50px;">
+                    <p style="font-size: 20px;color: dodgerblue;">
+                        <i class="fa fa-graduation-cap" aria-hidden="true"></i>&nbsp;思维强化引擎</p><br>
+                    <p style="font-size: 16px;">
+                        <i class="fa fa-paper-plane-o" aria-hidden="true"></i>&nbsp;&nbsp;赋予机器人类人思维方式</p><br>
+                    <p style="font-size: 16px;">
+                        <i class="fa fa-paper-plane-o" aria-hidden="true"></i>&nbsp;&nbsp;延展交互空间</p>
+                </div>
+                <div style="width: 320px;height: 140px;float: left;margin-top: 50px;">
+                    <p style="font-size: 20px; color: dodgerblue;">
+                        <i class="fa fa-leanpub" aria-hidden="true"></i>&nbsp;自学习引擎</p><br>
+                    <p style="font-size: 16px;">
+                        <i class="fa fa-paper-plane-o" aria-hidden="true"></i>&nbsp;&nbsp;智能掌握身份、偏好、习惯等对象特征</p><br>
+                    <p style="font-size: 16px;">
+                        <i class="fa fa-paper-plane-o" aria-hidden="true"></i>&nbsp;&nbsp;调整行为与策略</p>
+                </div>
+            </div>
+        </div>
+        <div class="th_show_content_list4">
+            <div class="th_show_content_1">
+                <img src="imgs/2-2/pic9.8698f02.png" alt="">
+            </div>
+            <div class="th_show_content_2">
+                <h2>各项能力集成，主板方案灵活可选</h2>
+                <br><br>
+                <p>提供高性价比主板方案，适配MIC阵列、激光雷达等外围硬件</p>
+                <br>
+                <p>实现包含情感、机器视觉、运动控制等在内的7大类、共26项机器人能力</p>
+                <br>
+                <p>在现有硬件与算法方案中自由选择，轻松打造出个性化机器人产品</p>
+            </div>
+        </div>
+    </div>
+    <div class="four">
+        <div class="four_content_1">
+            <img src="imgs/2-3/1.png" alt="">
+            <div class="four_title">
+                <p class="four_p1">Turing OS Lite</p><br>
+                <p class="four_p2">专为智能音箱、智能车载设备、智能故事机等语音交互场景打造的Turing OS版本。</p>
+            </div>
+            <div class="four_btn_a">
+                <p class="p_f">查看详情</p>
+            </div>
+        </div>
+        <div class="four_content_2">
+            <img src="imgs/2-3/2.png" alt="">
+            <div class="four_title">
+                <p class="four_p1">Turing OS Pro</p><br>
+                <p class="four_p2">专为家庭服务机器人打造的Turing OS版本，多模态交互是该版本的最大特征。</p>
+            </div>
+            <div class="four_btn_a">
+                <p class="p_f">查看详情</p>
+            </div>
+        </div>
+        <div class="four_content_3">
+            <img src="imgs/2-3/3.png" alt="">
+            <div class="four_title">
+                <p class="four_p1">Turing OS Pad</p><br>
+                <p class="four_p2">专为触屏和语音结合的Pad、大屏机器人场景打造的Turing OS版本，以AI桌面精灵的形式呈现。</p>
+            </div>
+            <div class="four_btn_a">
+                <p class="p_f">查看详情</p>
+            </div>
+        </div>
+        <div class="four_content_4">
+            <img src="imgs/2-3/4.png" alt="">
+            <div class="four_title">
+                <p class="four_p1">Turing OS 主板</p><br>
+                <p class="four_p2">包括：追求性价比的基础版、强调性能和价格平衡的标准版，以及追求极致性能的高配版。</p>
+            </div>
+            <div class="four_btn_a">
+                <p class="p_f">查看详情</p>
+            </div>
+        </div>
+        <div class="four_menu">
+            <div class="four_menu_item1">
+                <i id="four_menu_1" class="fa fa-file-code-o" aria-hidden="true" style="font-size: 20px;color: black"></i>
+            </div>
+            <div class="four_menu_item2">
+                <i id="four_menu_2" class="fa fa-diamond" aria-hidden="true" style="font-size: 20px;color: black"></i>
+            </div>
+            <div class="four_menu_item3">
+                <i id="four_menu_3" class="fa fa-television" aria-hidden="true" style="font-size: 20px;color: black"></i>
+            </div>
+            <div class="four_menu_item4">
+                <i id="four_menu_4" class="fa fa-cogs" aria-hidden="true" style="font-size: 20px;color: black"></i>
+            </div>
+        </div>
+    </div>
+    <div class="five">
+        <div class="w_five">
+            <div class="five_title">
+                <p class="five_title_p">六类AI技术赋能</p>
+                <p class="five_content_p">提供语音语义、情感视觉、领域图谱等多种AI技术，实现智能人机交互体验</p>
+            </div>
+            <div class="five_content">
+                <div class="five_item1">
+                    <div class="five_item1_box">
+                        <div style="width: 90px;height: 132px;flex: 1">
+                            <img src="imgs/2-5-1/1.png" alt="" style="float: right;margin-top: 20px;">
+                        </div>
+                        <div style="flex: 3;margin-left: 10px;margin-top: 20px;">
+                            <p style="font-size: 20px;">语义理解</p><br>
+                            <p style="font-size: 14px;">最好的中文语义理解</p>
+                            <p style="font-size: 14px;">效果流畅的人机对话</p>
+                            <p style="font-size: 14px;">场景上下文理解</p>
+                        </div>
+                    </div>
+                    <div class="five_item1_box">
+                        <div style="width: 90px;height: 132px;flex: 1">
+                            <img src="imgs/2-5-1/2.png" alt="" style="float: right;margin-top: 20px;">
+                        </div>
+                        <div style="flex: 3;margin-left: 10px;margin-top: 20px;">
+                            <p style="font-size: 20px;">情感分析</p><br>
+                            <p style="font-size: 14px;">支持情感识别和情感表达</p>
+                            <p style="font-size: 14px;">情感相关参数开放</p>
+
+                        </div>
+                    </div>
+                    <div class="five_item1_box">
+                        <div style="width: 90px;height: 132px;flex: 1">
+                            <img src="imgs/2-5-1/3.png" alt="" style="float: right;margin-top: 20px;">
+                        </div>
+                        <div style="flex: 3;margin-left: 10px;margin-top: 20px;">
+                            <p style="font-size: 20px;">知识图谱</p><br>
+                            <p style="font-size: 14px;">构建分领域的实体和关系集</p>
+                            <p style="font-size: 14px;">提高对话趣味性和识别准确率</p>
+
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="five_item1">
+                    <div class="five_item1_box">
+                        <div style="width: 90px;height: 132px;flex: 1">
+                            <img src="imgs/2-5-1/4.png" alt="" style="float: right;margin-top: 20px;">
+                        </div>
+                        <div style="flex: 3;margin-left: 10px;margin-top: 20px;">
+                            <p style="font-size: 20px;">多模态交互</p><br>
+                            <p style="font-size: 14px;">多模态人机交互方式</p>
+                            <p style="font-size: 14px;">支持文字、语音、视觉、动作</p>
+                            <p style="font-size: 14px;">充分模拟人与人的交互</p>
+                        </div>
+                    </div>
+                    <div class="five_item1_box">
+                        <div style="width: 90px;height: 132px;flex: 1">
+                            <img src="imgs/2-5-1/1.png" alt="" style="float: right;margin-top: 20px;">
+                        </div>
+                        <div style="flex: 3;margin-left: 10px;margin-top: 20px;">
+                            <p style="font-size: 20px;">个性化TTS</p><br>
+                            <p style="font-size: 14px;">赋予用户独特的听觉体验</p>
+                            <p style="font-size: 14px;">只需少量自有语句快速训练</p>
+
+                        </div>
+                    </div>
+                    <div class="five_item1_box">
+                        <div style="width: 90px;height: 132px;flex: 1">
+                            <img src="imgs/2-5-1/1.png" alt="" style="float: right;margin-top: 20px;">
+                        </div>
+                        <div style="flex: 3;margin-left: 10px;margin-top: 20px;">
+                            <p style="font-size: 20px;">机器视觉</p><br>
+                            <p style="font-size: 14px;">人脸检测、分析和识别</p>
+                            <p style="font-size: 14px;">图文字检测和识别</p>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="six">
+        <div class="six_lf">
+            <div class="six_le_1">
+                <div class="six_le_1_1">
+                    <img class="fa_img" src="imgs/2-5/skill1.4293378.png" alt="" width="60" height="70">
+                </div>
+                <div class="six_le_1_2">
+                    <img class="fa_img" src="imgs/2-5/skill2.5ea4873.png" alt="" width="60" height="70">
+                </div>
+                <div class="six_le_1_3">
+                    <img class="fa_img" src="imgs/2-5/skill3.81acc06.png" alt="" width="60" height="75">
+                </div>
+                <div class="six_le_1_4">
+                    <img class="fa_img" src="imgs/2-5/skill4.aacaf48.png" alt="" width="65" height="70">
+                </div>
+                <div class="six_le_1_5">
+                    <img class="fa_img" src="imgs/2-5/skill5.cb55372.png" alt="" width="85" height="70">
+                </div>
+                <div class="six_le_1_6">
+                    <img class="fa_img" src="imgs/2-5/skill6.f2fb434.png" alt="" width="60" height="80">
+                </div>
+            </div>
+            <div class="six_le_2">
+                <div class="six_le_1_1 six_le_2_1">
+                    <img class="fa_img" src="imgs/2-5/skill7.f57ec6c.png" alt="" width="60" height="70">
+                </div>
+                <div class="six_le_1_2 six_le_2_2">
+                    <img class="fa_img" src="imgs/2-5/skill10.a7d4502.png" alt="" width="60" height="75">
+                </div>
+
+                <div class="six_le_1_4 six_le_2_4">
+                    <img class="fa_img" src="imgs/2-5/下载.png" alt="" width="50" height="70">
+                </div>
+                <div class="six_le_1_5 six_le_2_5">
+                    <img class="fa_img" src="imgs/2-5/下载 (1).png" alt="" width="60" height="80">
+                </div>
+
+            </div>
+            <div class="six_le_center">
+                <img src="imgs/2-5/yun.896cb03.png" alt="">
+                <div id="yun_text" class="six_text"></div>
+            </div>
+            <div class="six_le_bg">
+                <img src="imgs/2-5/dian.be9d462.png" alt="">
+            </div>
+        </div>
+        <div class="six_rig">
+            <p style="font-size: 32px;color: #262626">丰富的趣味技能寓教于乐</p><br>
+            <p style="font-size: 16px;color: #262626">
+                三十多种趣味技能，指导孩子的教育学习、艺术培养、国学才艺，以及丰富的内容资源，为日常生活带来充实乐趣；
+
+            </p>
+            <br>
+            <p style="font-size: 16px;color: #262626">
+                支持定制场景技能；
+            </p><br>
+            <p style="font-size: 16px;color: #262626">
+                支持使用自定义意图工具
+            </p><br><br>
+            <p href="#" class="six_btn">立即接入</p>
+        </div>
+
+    </div>
+    <div class="seven">
+        <div class="seven_title">
+
+            <p class="seven_title_p">部分应用案例</p>
+            <p class="seven_title_p_content">专注给儿童产品提供最好的AI技术，赋予产品全新的、最接近人类的多模态交互方式</p>
+        </div>
+        <div class="seven_show">
+            <div class="seven_show_menu1">
+                <div class="seven_show_item1">
+                    <div class="seven_item">
+                        <div class="seven_hover" style="width: 111px;height: 111px;overflow: hidden;flex: 1">
+                            <img src="imgs/2-6/robohon.75c8b95.png" alt="" width="109" height="109">
+                        </div>
+                        <div style="flex: 1;margin-top: 70px;">
+                            <strong><p class="toBlue" style="color: #262626;font-size: 20px;">Robohon</p></strong>
+                        </div>
+                    </div>
+                    <div class="seven_item">
+                        <p class="con">乖巧可爱的外形，萌萌哒表情和动作，这款来自富士康的、制作精良的机器人，辅以图灵机器人的语音交互技术，正在逐渐俘获大部分用户的心</p></div>
+                </div>
+                <div class="seven_show_item1">
+                    <div class="seven_item">
+                        <div class="seven_hover" style="width: 111px;height: 111px;overflow: hidden;flex: 1">
+                            <img src="imgs/2-6/robohon1.6980106.png" alt="" width="109" height="109">
+                        </div>
+                        <div style="flex: 1;margin-top: 70px;">
+                            <strong><p class="toBlue" style="color: #262626;font-size: 20px;">Kido</p></strong>
+                        </div>
+                    </div>
+                    <div class="seven_item">
+                        <p class="con">一款儿童智能手表，基于图灵机器人智能引擎，可提供百科问答、四则运算等内容的查询指导，是小朋友随身的全能助手。</p></div>
+                </div>
+                <div class="seven_show_item1">
+                    <div class="seven_item">
+                        <div class="seven_hover" style="width: 111px;height: 111px;overflow: hidden;flex: 1">
+                            <img src="imgs/2-6/watch.cd01bd2.png" alt="" width="109" height="109">
+                        </div>
+                        <div style="flex: 1;margin-top: 70px;">
+                            <strong><p class="toBlue" style="color: #262626;font-size: 20px;">儿童电话手表</p></strong>
+                        </div>
+                    </div>
+                    <div class="seven_item">
+                        <p class="con">米兔儿童电话手表2是由小米生态链企业上海小寻科技公司生产，该产品具有高清通话、语音聊天、运动轨迹、5重定位、超长待机、儿歌故事、宠物养成等特点。</p></div>
+                </div>
+            </div>
+            <div class="seven_show_menu2">
+                <div class="seven_show_item1">
+                    <div class="seven_item">
+                        <div class="seven_hover" style="width: 111px;height: 111px;overflow: hidden;flex: 1">
+                            <img src="imgs/2-6/paibot.de80525.png" alt="" width="109" height="109">
+                        </div>
+                        <div style="flex: 1;margin-top: 70px;">
+                            <strong><p class="toBlue" style="color: #262626;font-size: 20px;">名校堂</p></strong>
+                        </div>
+                    </div>
+                    <div class="seven_item">
+                        <p class="con">名校堂云博士早教机器人，专注于教育的机器人，为0-12岁孩子量身定制早教内容，不仅能够缓解孩子的学习压力，也同时还能减轻妈妈们的负担。</p></div>
+                </div>
+                <div class="seven_show_item1">
+                    <div class="seven_item">
+                        <div class="seven_hover" style="width: 111px;height: 111px;overflow: hidden;flex: 1">
+                            <img src="imgs/2-6/huotu.4b659c8.png" alt="" width="109" height="109">
+                        </div>
+                        <div style="flex: 1;margin-top: 70px;">
+                            <strong><p class="toBlue" style="color: #262626;font-size: 20px;">火火兔</p></strong>
+                        </div>
+                    </div>
+                    <div class="seven_item">
+                        <p class="con">火火兔，专注于儿童智能早教科技产品的设计与开发。7年来，“火火兔”品牌以其优秀的创意设计、稳定过硬的质量和原创内容体系广受孩子和家长们的欢迎，并且形成了极强的口碑传播。</p></div>
+                </div>
+                <div class="seven_show_item1">
+                    <div class="seven_item">
+                        <div class="seven_hover" style="width: 111px;height: 111px;overflow: hidden;flex: 1">
+                            <img src="imgs/2-6/ld.767a38e.png" alt="" width="109" height="109">
+                        </div>
+                        <div style="flex: 1;margin-top: 70px;">
+                            <strong><p class="toBlue" style="color: #262626;font-size: 20px;">乐迪</p></strong>
+                        </div>
+                    </div>
+                    <div class="seven_item">
+                        <p class="con">著名动画作品《超级飞侠》里的灵魂人物，基于图灵机器人人工智能操作系统Turing OS，让乐迪从荧屏走进现实</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="eight">
+        <div class="eight_title">
+            <p style="font-size: 32px;color: #262626;">成为合作伙伴</p>
+            <p>与图灵机器人一起，致力于为千百万儿童带来最好的AI产品，最终实现合作共赢</p>
+        </div>
+        <div class="eight_show">
+            <div class="eight_show_item">
+                <img src="imgs/2-7/1.png" alt="">
+                <div style="font-size: 20px;color: black;">硬件或芯片方案商</div>
+            </div>
+            <div class="eight_show_item">
+                <img src="imgs/2-7/2.png" alt="">
+                <div style="font-size: 20px;color: black;">&nbsp;&nbsp;&nbsp;&nbsp;IP方案商</div>
+            </div>
+            <div class="eight_show_item">
+                <img src="imgs/2-7/3.png" alt="">
+                <div style="font-size: 20px;color: black;">内容资源商</div>
+            </div>
+        </div>
+        <p class="eight_btn">我要加入</p>
+    </div>
+    <div class="nine">
+        <div class="nine_center">
+            <div class="nine_center_left">
+                <div class="nine_center_left_title">
+                    <p style="font-size: 26px;color: #515A6E;margin-top: 20px;">商务人员为你服务</p>
+                    <p style="margin-top: -40px;">请留下您的联系方式，我们将尽快与您联系</p>
+                </div>
+                <div class="nine_center_form">
+<!--                   <form action="" method="post">-->
+                       <input class="inp" id="n_gs" type="text" placeholder="公司/单位名称（必填）"><br><br>
+                       <input class="inp" id="n_name" type="text" placeholder="姓名/称呼（必填）"><br><br>
+                       <input class="inp" id="n_tel" type="tel" placeholder="联系电话：手机/固话（必填）"><br><br>
+                       <input class="inp" id="n_email" type="email" placeholder="邮箱（必填）"><br><br>
+                       <input class="inp" id="n_ness" type="text" placeholder="您对AI的主要需求（必填）"><br><br>
+                       <input class="inp" id="n_intr" type="text" placeholder="您的公司业务介绍（选填）"><br><br>
+                       <button id="nine_btn" class="inp nine_btn" >提交</button>
+<!--                   </form>-->
+                </div>
+                <div class="confirm">
+                    <h1 style="text-align: center;margin-top: 20px;">信息详情</h1>
+                    <hr>
+                    <div id="show_sub" style="margin-top: 30px;margin-left: 20px;background-color: white;color: black;opacity: 1">
+<!--                        <p>1</p>-->
+<!--                        <p>2</p>-->
+<!--                        <p>3</p>-->
+<!--                        <p>4</p>-->
+<!--                        <p>5</p>-->
+<!--                        <p>6</p>-->
+                    </div>
+                    <div style="width: 300px;height: 50px;margin: 0 auto;text-align: center;">
+                        <button id="again_confirm" class="inp nine_btn">确认提交</button>
+                    </div>
+                    <br><br>
+                    <hr>
+                    <!--                   </form>-->
+                </div>
+            </div>
+            <div class="nine_center_right">
+                <div class="ku">
+                    <p class="nine_tit">客户咨询专线</p>
+                    <p class="nine_con">请通过以下方式联系我们的商务人员，了解更多产品与服务信息</p><br>
+                    <p class="tel2">
+                        <span>公司地址：&nbsp;</span><br>
+                        <span>&nbsp;&nbsp;&nbsp;深圳市南山区深圳湾科技生态园二期9栋A座21楼18-28号房</span>
+                    </p><br>
+                    <p class="tel"><span>客服热线：&nbsp;</span>13480890920（9:00-20:00，含节假日）</p>
+                    <p class="tel"><span>商务合作：&nbsp;</span>0755-33319052（10:00-18:30）</p>
+
+                </div>
+                <div id="map_" class="map"></div>
+                <script type="text/javascript">
+                    var map = new BMap.Map("map_");
+                    // 创建地图实例
+                    var point = new BMap.Point(116.404, 39.915);
+                    // 创建点坐标
+                    map.centerAndZoom(point, 15);
+                    // 初始化地图，设置中心点坐标和地图级别
+                </script>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer_logo">
+            <div class="footer_logo_left">
+                <a href=""><img src="imgs/footer/facebook.png" alt=""></a>
+            </div>
+            <div class="footer_logo_left">
+                <a href=""> <img src="imgs/footer/in.png" alt=""></a>
+            </div>
+            <div class="footer_logo_left">
+                <a href=""><img src="imgs/footer/推特_twitter44.png" alt=""></a>
+            </div>
+            <div class="footer_logo_left">
+                <a href=""> <img src="imgs/footer/微信.png" alt=""></a>
+            </div>
+        </div>
+        <div class="footer_list">
+            <ul>
+                <li>讯飞AIUI开放平台</li>
+                <li>奥飞娱乐</li>
+                <li>kido儿童手表</li>
+                <li>步步高</li>
+                <li>富士康</li>
+                <li>联想</li>
+                <li>名校堂</li>
+                <li>读书郎</li>
+                <li>鲁奇亚</li>
+            </ul>
+        </div>
+        <div class="footer_bot">
+            <p style="font-size: 14px;">备案/许可证号：京ICP备12005671号  Copyright  2017-2018 北京光年无限科技有限公司 All rights Reserved</p>
+        </div>
+    </div>
+    <div id="lo_btn" class="logo_btn">
+        <span style="font-size: 18px;">用户登录</span><br><br>
+        <input class="logo_inp" type="text" id="f_lo_user" placeholder="请输入用户名"><br><br>
+        <input class="logo_inp" type="password" id="f_lo_pwd" placeholder="请输入密码"><br><br>
+        <input class="logo_inp butto" id="first_logo"  type="submit" value="登录">
+    </div>
+    <div id="re_btn" class="logo_btn">
+        <span style="font-size: 18px;">用户注册</span><br><br>
+        <input class="logo_inp" type="text" id="f_user" placeholder="用户名不应少于6位"><br><br>
+        <input class="logo_inp" type="password" id="f_pwd" placeholder="密码不应少于6位"><br><br>
+        <input class="logo_inp butto" id="first_reg" type="submit" value="注册">
+    </div>
+    <div class="toTop">
+        <a href="#top" style="color: white;font-size: 16px;">Top</a>
+    </div>
+    <div class="fixNav">
+        <div class="w_menu">
+            <div style="float: left">
+                <img src="imgs/logo/logo.png" alt="" width="80" height="38">
+            </div>
+            <ul class="nav_menu">
+                <li class="menu">首页概况</li>
+                <li id="menu_pro_2" class="menu">产品介绍
+                    <div id="show_pro_2" class="show_  show_index_2">
+                        <ul>
+                            <li>Turing OS Lite</li>
+                            <li>Turing OS Pro</li>
+                            <li>Turing OS Pad</li>
+                            <li>Turing OS 主板</li>
+                        </ul>
+                    </div>
+                </li>
+                <li id="menu_fa_2" class="menu">解决方案
+                    <div id="show_fa_2" class="show_  show_fa_2">
+                        <ul>
+                            <li>智能故事机</li>
+                            <li>儿童机器人</li>
+                            <li>场景机器人</li>
+                            <li>虚拟机器人</li>
+                        </ul>
+                    </div>
+                </li>
+                <li id="menu_js_2" class="menu">技术中心
+                    <div id="show_js_2" class="show_  show_js_2">
+                        <ul>
+                            <li>语义理解</li>
+                            <li>情感分析</li>
+                            <li>知识图谱</li>
+                            <li>多模态交互</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="menu">对话体验</li>
+                <li class="menu">文档支持</li>
+            </ul>
+
+        </div>
+       <div id="show_fix" style="float: right;height: 4px;line-height: 40px;margin-right: 40px;color: firebrick;">
+          请先登录
+       </div>
+        <div id="show_User_fix" style="float: right;height: 4px;line-height: 40px;margin-right: 40px;display: none;">
+            
+        </div>
+        <div id="tuichu" style="float: right;height: 4px;line-height: 40px;margin-right: 40px;display: none;">
+            <button type="button" class="ivu-btn ivu-btn-default btn reg-btn">退出</button>
+        </div>
+    </div>
+    <div id="lo_btn_2" class="logo_btn_2">
+        <span style="font-size: 18px;">用户登录</span><br><br>
+        <input class="logo_inp" type="text" placeholder="请输入用户名"><br><br>
+        <input class="logo_inp" type="password" placeholder="请输入密码"><br><br>
+        <input class="logo_inp butto" type="submit" value="登录">
+    </div>
+    <div id="re_btn_2" class="logo_btn_2">
+        <span style="font-size: 18px;">用户注册</span><br><br>
+        <input class="logo_inp" type="text"  placeholder="请输入用户名"><br><br>
+        <input class="logo_inp" type="password" placeholder="请输入密码"><br><br>
+        <input class="logo_inp butto" type="submit" value="注册">
+    </div>
+</body>
+<script>
+    (function () {
+        var subArr = [];
+        //判断是否已经是登录状态
+        var isLogo = false;
+        var Use = "";
+        var flag1 = false;
+        var lo_text = document.getElementById("head_logo_span");
+        var flag = false;
+        //判断是否退出
+        var islogout = false;
+        /*
+        * 滚轴事件
+        * 描述：当滚动高度大于 500 时，返回顶部按钮出现,否则隐藏
+        * */
+        var body = document.body;
+        var fixNav = document.getElementsByClassName("fixNav")[0];
+        var show_fix = document.getElementById("show_fix");
+        body.onscroll = function () {
+            var a = document.documentElement.scrollTop;
+            var toTop = document.getElementsByClassName("toTop")[0];
+            if (a > 300){
+                toTop.style.display = "block";
+                fixNav.style.display = "block";
+                if (isLogo){
+                    var show_User_fix = document.getElementById("show_User_fix");
+                    show_User_fix.style.display = "block";
+                    show_User_fix.innerText = "欢迎用户：" + Use;
+                    show_fix.style.display = "none";
+                }
+                if (islogout){
+                    var show_User_fix = document.getElementById("show_User_fix");
+                    show_User_fix.style.display = "none";
+                    show_fix.style.display = "block";
+                }
+                if(!isLogo){
+                    show_fix.style.display = "block";
+                }
+            }
+            if (a < 300){
+                toTop.style.display = "none";
+                fixNav.style.display = "none";
+            }
+        }
+        var nine_btn =document.getElementById("nine_btn");
+        /*模拟提交表单功能*/
+        var btn_OFF = true;
+        $("#nine_btn").click(function () {
+            if (btn_OFF){
+                var n_gs = document.getElementById("n_gs").value;
+                var n_name = document.getElementById("n_name").value;
+                var n_tel = document.getElementById("n_tel").value;
+                var n_email = document.getElementById("n_email").value;
+                var n_ness = document.getElementById("n_ness").value;
+                var n_intr = document.getElementById("n_intr").value;
+                if (n_gs == "" || n_name == "" || n_tel == ""|| n_email ==""||n_ness == ""){
+                    alert("您未填写有关信息！")
+                    return;
+                }
+                var desc = ["公司(单位)名：","姓名/称呼:","电话/手机：","邮箱：","您对AI的主要需求：","您的公司业务介绍："];
+                subArr.push(n_gs,n_name,n_tel,n_email,n_ness,n_intr);
+                var confirm = document.getElementsByClassName("confirm")[0];
+                confirm.className = "confirm_";
+                nine_btn.disabled;
+                btn_OFF = false;
+                console.log(subArr)
+                // var show_sub = document.querySelectorAll("#show_sub p");
+                var show_sub = document.getElementById("show_sub");
+                for (var i = 0;i<subArr.length;i++){
+                    show_sub.innerHTML += "<p>"+desc[i]+subArr[i]+"</p>"+"<br>";
+
+                }
+            }
+        });
+        $("#again_confirm").click(function () {
+            btn_OFF = true;
+            alert("提交成功！");
+            // var confirm_ = document.getElementsByClassName("confirm_")[0];
+            $(".confirm_").slideUp();
+            //信息置空
+            document.getElementById("n_gs").value = "";
+            document.getElementById("n_name").value = "";
+            document.getElementById("n_tel").value = "";
+            document.getElementById("n_email").value = "";
+            document.getElementById("n_ness").value = "";
+            document.getElementById("n_intr").value = "";
+
+        });
+
+        /*
+        * 模拟注册功能
+        *
+        * */
+
+        var arrRegUser = [];
+        var f_user = document.getElementById("f_user");
+        var f_pwd = document.getElementById("f_pwd");
+        var re_text = document.getElementById("head_re_span");
+        //获取注册按钮
+        $("#first_reg").click(function () {
+            //获取用户名，密码
+            var f_userVal = f_user.value;
+            var f_pwdVal = f_pwd.value;
+            if (f_userVal == "" || f_pwdVal == ""){
+               alert("用户名或密码不能为空!");
+               return;
+            }
+            //用户名不能少于6位
+            if (f_userVal.length < 6 || f_pwdVal.length < 6){
+                alert("用户名或密码不能少于6位！");
+                return;
+            }
+            var objUser = {
+                name:f_userVal,
+                pwd:f_pwdVal
+            };
+            arrRegUser.push(objUser);
+            $("#re_btn").slideUp("slow",function () {
+                re_text.innerText = "注册";
+                alert("注册成功!");
+                flag1 = false;
+            });
+            // console.log(arrRegUser)
+        });
+        /*
+        *
+        * 模拟登录功能
+        * */
+        var f_lo_user = document.getElementById("f_lo_user");
+        var f_lo_pwd = document.getElementById("f_lo_pwd");
+        var first_logo = document.getElementById("first_logo");
+        first_logo.onclick = function(){
+            var user = f_lo_user.value;
+            var pwd = f_lo_pwd.value;
+            if (user == "" || pwd == ""){
+                alert("用户名密码不能为空！")
+                return;
+            }
+            //从数组里面匹配值
+            var User = {
+                name1:user,
+                pasd:pwd
+            }
+            // if (arrRegUser.length == 0){
+            //     alert("登陆失败");
+            //     return;
+            // }
+            for (var i = 0;i <arrRegUser.length;i++){
+                var  a= arrRegUser[i].name;
+                var  b = arrRegUser[i].pwd;
+                 if (a == User.name1 && b == User.pasd){
+                    alert("登录成功！");
+                    $("#lo_btn").slideUp("slow");
+                    var fl = document.getElementsByClassName("fl")[0];
+                    fl.style.display = "none";
+                    var show_user = document.getElementById("show_user");
+                    show_user.style.display = "block";
+                    Use = User.name1;
+                    show_user.innerText ="欢迎用户：" +  User.name1;
+                    isLogo = true;
+                    var tuichu1 = document.getElementById("tuichu1");
+                    tuichu1.style.display = "block";
+
+                }else {
+                     continue;
+                     alert("登陆失败！");
+
+                }
+            }
+
+        }
+        //退出功能
+        var tuichu1 = document.getElementById("tuichu1");
+        tuichu1.onclick = function () {
+            var show_user = document.getElementById("show_user");
+            show_user.style.display = "none";
+            var fl = document.getElementsByClassName("fl")[0];
+            fl.style.display = "block";
+            tuichu1.style.display = "none";
+            lo_text.innerText = "登录";
+            flag = false;
+            islogout = true;
+            alert("退出登录成功！");
+
+        }
+
+        /*
+        *
+        * 登录注册下拉上收效果
+        * */
+
+        var re_text = document.getElementById("head_re_span");
+
+       $("#header_logo_btn").click(function () {
+           $("#lo_btn").slideDown("slow",function () {
+               $("#re_btn").slideUp(function () {
+                   re_text.innerText = "注册";
+                   flag1 = false;
+               });
+               lo_text.innerText = "收起";
+               flag = true;
+           });
+       });
+        $("#header_logo_btn").click(function () {
+           if (flag){
+               $("#lo_btn").slideUp("slow",function () {
+                   lo_text.innerText = "登录";
+                   flag = false;
+               });
+           }
+        });
+
+        $("#header_re_btn").click(function () {
+            $("#re_btn").slideDown("slow",function () {
+                $("#lo_btn").slideUp(function () {
+                    lo_text.innerText = "登录";
+                    flag = false;
+                });
+                re_text.innerText = "收起";
+                flag1 = true;
+            });
+        });
+        $("#header_re_btn").click(function () {
+            if (flag1){
+                $("#re_btn").slideUp("slow",function () {
+                    re_text.innerText = "注册";
+                    flag1 = false;
+                });
+            }
+        });
+        /*
+        * 固定菜单的
+        * */
+        var lo_text_2 = document.getElementById("head_logo_span_2");
+        var re_text_2 = document.getElementById("head_re_span_2");
+        var flag_2 = false;
+        $("#header_logo_btn_2").click(function () {
+            $("#lo_btn_2").slideDown("slow",function () {
+                lo_text_2.innerText = "收起";
+                flag_2 = true;
+            });
+        });
+        $("#header_logo_btn_2").click(function () {
+            if (flag_2){
+                $("#lo_btn_2").slideUp("slow",function () {
+                    lo_text_2.innerText = "登录";
+                    flag_2 = false;
+                });
+            }
+        });
+        var flag1_2 = false;
+        $("#header_re_btn_2").click(function () {
+            $("#re_btn_2").slideDown("slow",function () {
+                re_text_2.innerText = "收起";
+                flag1_2 = true;
+            });
+        });
+        $("#header_re_btn_2").click(function () {
+            if (flag1_2){
+                $("#re_btn_2").slideUp("slow",function () {
+                    re_text_2.innerText = "注册";
+                    flag1_2 = false;
+                });
+            }
+        });
+
+
+
+        /*
+           导航栏鼠标悬浮下拉效果
+        */
+        $("#menu_pro").hover(function () {
+            $("#show_pro").slideDown();
+        },function () {
+            $("#show_pro").slideUp();
+        });
+        $("#menu_fa").hover(function () {
+            $("#show_fa").slideDown();
+        },function () {
+            $("#show_fa").slideUp();
+        });
+        $("#menu_js").hover(function () {
+            $("#show_js").slideDown();
+        },function () {
+            $("#show_js").slideUp();
+        });
+        // 固定导航
+        $("#menu_pro_2").hover(function () {
+            $("#show_pro_2").slideDown();
+        },function () {
+            $("#show_pro_2").slideUp();
+        });
+        $("#menu_fa_2").hover(function () {
+            $("#show_fa_2").slideDown();
+        },function () {
+            $("#show_fa_2").slideUp();
+        });
+        $("#menu_js_2").hover(function () {
+            $("#show_js_2").slideDown();
+        },function () {
+            $("#show_js_2").slideUp();
+        });
+
+
+        /*
+        * 这个地方貌似是画了一个大圈圈（还是个蓝色的）
+        * */
+        var c=document.getElementById("cvs");
+        var ctx=c.getContext("2d");
+        ctx.beginPath();
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = "rgb(8,145,177)";
+        ctx.arc(200,200,180,0,2*Math.PI);
+        ctx.stroke();
+
+        /*
+        *
+        * 处理第三部分类名 thr 别瞎几把乱找
+        * */
+        // 处理第一个元素
+        var th_show_content_list1 = document.getElementsByClassName("th_show_content_list1")[0];
+        var th_show_content_list2 = document.getElementsByClassName("th_show_content_list2")[0];
+        var th_show_content_list3 = document.getElementsByClassName("th_show_content_list3")[0];
+        var th_show_content_list4 = document.getElementsByClassName("th_show_content_list4")[0];
+        var show_gifs = document.getElementsByClassName("show_gif");
+        show_gifs[0].addEventListener("mouseover",function () {
+            show_gifs[0].src="imgs/2-2/1.gif";
+            th_show_content_list1.style.display = "block";
+            th_show_content_list2.style.display = "none";
+            th_show_content_list3.style.display = "none";
+            th_show_content_list4.style.display = "none";
+            show_gifs[0].width = 75;
+            show_gifs[0].height = 75;
+
+        });
+        show_gifs[0].addEventListener("mouseout",function () {
+            show_gifs[0].src="imgs/2-2/11.png";
+            show_gifs[0].width = 75;
+            show_gifs[0].height = 75;
+        });
+        // 处理第二个元素
+        show_gifs[1].addEventListener("mouseover",function () {
+            show_gifs[1].src="imgs/2-2/2.gif";
+            th_show_content_list1.style.display = "none";
+            th_show_content_list2.style.display = "block";
+            th_show_content_list3.style.display = "none";
+            th_show_content_list4.style.display = "none";
+            show_gifs[1].width = 75;
+            show_gifs[1].height = 75;
+        });
+        show_gifs[1].addEventListener("mouseout",function () {
+            show_gifs[1].src="imgs/2-2/2.png";
+            show_gifs[1].width = 75;
+            show_gifs[1].height = 75;
+        });
+        // 处理第三个元素
+        show_gifs[2].addEventListener("mouseover",function () {
+            show_gifs[2].src="imgs/2-2/3.gif";
+            th_show_content_list1.style.display = "none";
+            th_show_content_list2.style.display = "none";
+            th_show_content_list3.style.display = "block";
+            th_show_content_list4.style.display = "none";
+            show_gifs[2].width = 75;
+            show_gifs[2].height = 75;
+        });
+        show_gifs[2].addEventListener("mouseout",function () {
+            show_gifs[2].src="imgs/2-2/3.png";
+            show_gifs[2].width = 75;
+            show_gifs[2].height = 75;
+        });
+        // 处理第四个元素
+        show_gifs[3].addEventListener("mouseover",function () {
+            show_gifs[3].src="imgs/2-2/4.gif";
+            th_show_content_list1.style.display = "none";
+            th_show_content_list2.style.display = "none";
+            th_show_content_list3.style.display = "none";
+            th_show_content_list4.style.display = "block";
+            show_gifs[3].width = 75;
+            show_gifs[3].height = 75;
+        });
+        show_gifs[3].addEventListener("mouseout",function () {
+            show_gifs[3].src="imgs/2-2/4.png";
+            show_gifs[3].width = 75;
+            show_gifs[3].height = 75;
+        });
+
+
+        /*
+        * 处理第六部分 类名six
+        *
+        * */
+        //图标
+        var four_menu_1 = document.getElementById("four_menu_1");
+        var four_menu_2 = document.getElementById("four_menu_2");
+        var four_menu_3 = document.getElementById("four_menu_3");
+        var four_menu_4 = document.getElementById("four_menu_4");
+        // 内容框
+        var four_content_1 = document.getElementsByClassName("four_content_1")[0];
+        var four_content_2 = document.getElementsByClassName("four_content_2")[0];
+        var four_content_3 = document.getElementsByClassName("four_content_3")[0];
+        var four_content_4 = document.getElementsByClassName("four_content_4")[0];
+        // 字体图标外面的那个圆框框
+        var four_menu_item1 = document.getElementsByClassName("four_menu_item1")[0];
+        var four_menu_item2 = document.getElementsByClassName("four_menu_item2")[0];
+        var four_menu_item3 = document.getElementsByClassName("four_menu_item3")[0];
+        var four_menu_item4 = document.getElementsByClassName("four_menu_item4")[0];
+        four_menu_item1.style.backgroundColor = "dodgerblue";
+        four_menu_1.style.color = "white";
+        four_menu_1.onclick = function () {
+            four_menu_item1.style.backgroundColor = "dodgerblue";
+            four_menu_1.style.color = "white";
+            four_menu_item2.style.backgroundColor = "white";
+            four_menu_2.style.color = "black";
+            four_menu_item3.style.backgroundColor = "white";
+            four_menu_3.style.color = "black";
+            four_menu_item4.style.backgroundColor = "white";
+            four_menu_4.style.color = "black";
+            four_content_1.style.display = "block";
+            four_content_2.style.display = "none";
+            four_content_3.style.display = "none";
+            four_content_4.style.display = "none";
+        }
+
+        four_menu_2.onclick = function () {
+            four_menu_item1.style.backgroundColor = "white";
+            four_menu_1.style.color = "black";
+            four_menu_item2.style.backgroundColor = "dodgerblue";
+            four_menu_2.style.color = "white";
+            four_menu_item3.style.backgroundColor = "white";
+            four_menu_3.style.color = "black";
+            four_menu_item4.style.backgroundColor = "white";
+            four_menu_4.style.color = "black";
+            four_content_1.style.display = "none";
+            four_content_2.style.display = "block";
+            four_content_3.style.display = "none";
+            four_content_4.style.display = "none";
+        }
+
+        four_menu_3.onclick = function () {
+            four_menu_item1.style.backgroundColor = "white";
+            four_menu_1.style.color = "black";
+            four_menu_item2.style.backgroundColor = "white";
+            four_menu_2.style.color = "black";
+            four_menu_item3.style.backgroundColor = "dodgerblue";
+            four_menu_3.style.color = "white";
+            four_menu_item4.style.backgroundColor = "white";
+            four_menu_4.style.color = "black";
+            four_content_1.style.display = "none";
+            four_content_2.style.display = "none";
+            four_content_3.style.display = "block";
+            four_content_4.style.display = "none";
+        }
+
+        four_menu_4.onclick = function () {
+            four_menu_item1.style.backgroundColor = "white";
+            four_menu_1.style.color = "black";
+            four_menu_item2.style.backgroundColor = "white";
+            four_menu_2.style.color = "black";
+            four_menu_item3.style.backgroundColor = "white";
+            four_menu_3.style.color = "black";
+            four_menu_item4.style.backgroundColor = "dodgerblue";
+            four_menu_4.style.color = "white";
+            four_content_1.style.display = "none";
+            four_content_2.style.display = "none";
+            four_content_3.style.display = "none";
+            four_content_4.style.display = "block";
+        }
+
+        /*
+        * 数组随机那个东西
+        * */
+        var obj0 = {
+            imgUrl:"imgs/2-5/skill1.4293378.png",
+            text:"歌曲点播",
+
+        }
+        var obj1 = {
+            imgUrl:"imgs/2-5/skill1.4293378.png",
+            text:"歌曲点播",
+
+        };
+        var obj2 = {
+            imgUrl:"imgs/2-5/skill2.5ea4873.png",
+            text:"动物叫声",
+
+        };
+        var obj3= {
+            imgUrl:"imgs/2-5/skill3.81acc06.png",
+            text:"故事点播",
+
+        };
+        var obj4 = {
+            imgUrl:"imgs/2-5/skill4.aacaf48.png",
+            text:"乐器音乐",
+
+        };
+        var obj5 = {
+            imgUrl:"imgs/2-5/skill5.cb55372.png",
+            text:"大自然声音",
+
+        };
+        var obj6 = {
+            imgUrl:"imgs/2-5/skill6.f2fb434.png",
+            text:"诗词背诵",
+
+        };
+        var obj7 = {
+            imgUrl:"imgs/2-5/skill7.f57ec6c.png",
+            text:"跳舞",
+
+        };
+        var obj8 = {
+            imgUrl:"imgs/2-5/skill10.a7d4502.png",
+            text:"运动控制",
+
+        };
+        var obj9 = {
+            imgUrl:"imgs/2-5/下载 (1).png",
+            text:"闹钟",
+
+        };
+        var obj10 = {
+            imgUrl:"imgs/2-5/下载.png",
+            text:"知识库",
+
+        };
+        var fa_imgs = document.getElementsByClassName("fa_img");
+        var srrImg = [fa_imgs[0],fa_imgs[0],fa_imgs[1],fa_imgs[2],
+            fa_imgs[3],fa_imgs[4],fa_imgs[5],fa_imgs[6],fa_imgs[7],fa_imgs[8],fa_imgs[9]];
+        var arrShow =  [obj0,obj1,obj2,obj3,obj4,obj5,obj6,obj7,obj8,obj10,obj9];
+        //获取展示文本描述的云朵
+        var yun_text  = document.getElementById("yun_text");
+
+        // 声明一个定时器
+        //更改样式
+        var timer = setInterval(function () {
+            // 随机生成一个1-10的随机数时
+            var num = Math.floor(Math.random() * 10) + 1;
+            srrImg[num].className = "fa_img_";
+            yun_text.innerText = arrShow[num].text;
+        },1500);
+        // 清楚样式
+        var timer2 = setInterval(function () {
+            for (var i = 0 ; i < srrImg.length; i ++){
+                if (srrImg[i].className == "fa_img_") {
+                    srrImg[i].className = "";
+                }else {
+                    srrImg[i].className = "fa_img";
+                }
+            }
+        },2500);
+        /*
+        *
+        * 第七部分 seven
+        * */
+        var seven_show_item1 = document.getElementsByClassName("seven_show_item1");
+        var toBlue = document.getElementsByClassName("toBlue");
+        seven_show_item1[0].addEventListener("mouseover",function () {
+            toBlue[0].style.color = "skyblue";
+        });
+        seven_show_item1[0].addEventListener("mouseout",function () {
+            toBlue[0].style.color = "black";
+        })
+        seven_show_item1[1].addEventListener("mouseover",function () {
+            toBlue[1].style.color = "skyblue";
+        });
+        seven_show_item1[1].addEventListener("mouseout",function () {
+            toBlue[1].style.color = "black";
+        });
+        seven_show_item1[2].addEventListener("mouseover",function () {
+            toBlue[2].style.color = "skyblue";
+        });
+        seven_show_item1[2].addEventListener("mouseout",function () {
+            toBlue[2].style.color = "black";
+        });
+        seven_show_item1[3].addEventListener("mouseover",function () {
+            toBlue[3].style.color = "skyblue";
+        });
+        seven_show_item1[3].addEventListener("mouseout",function () {
+            toBlue[3].style.color = "black";
+        });
+        seven_show_item1[4].addEventListener("mouseover",function () {
+            toBlue[4].style.color = "skyblue";
+        });
+        seven_show_item1[4].addEventListener("mouseout",function () {
+            toBlue[4].style.color = "black";
+        });
+        seven_show_item1[5].addEventListener("mouseover",function () {
+            toBlue[5].style.color = "skyblue";
+        });
+        seven_show_item1[5].addEventListener("mouseout",function () {
+            toBlue[5].style.color = "black";
+        });
+    })();
+
+</script>
+</html>
